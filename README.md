@@ -33,57 +33,29 @@ Skills are markdown files that give AI agents specialized knowledge and workflow
 
 ## Installation
 
-### Option 1: CLI Install (Recommended)
+### Claude Code Plugin (Recommended)
 
 ```bash
-# Install all 20 skills globally (works across all projects)
-npx skills add Paramchoudhary/ResumeSkills -g -y
-
-# Install to current project only
-npx skills add Paramchoudhary/ResumeSkills -y
-
-# List installed skills
-npx skills list
-
-# List global skills
-npx skills list --global
+claude plugin add --transport github FusionBrah/ResumeSkills
 ```
 
-### Option 2: Manual Install
-
-```bash
-# Clone and copy to skills folder
-git clone https://github.com/Paramchoudhary/ResumeSkills.git
-mkdir -p ~/.cursor/skills
-cp -r ResumeSkills/skills/* ~/.cursor/skills/
-```
-
-### Option 3: Direct Download
-
-Download individual skill files from the `/skills` directory and add them to your AI agent's skills folder.
+This installs all 20 skills as a Claude Code plugin. Skills are automatically available via slash commands (e.g., `/resume-tailor`, `/interview-prep-generator`).
 
 ### Uninstall
 
 ```bash
-# Remove individual skills by name
-npx skills remove resume-ats-optimizer
-npx skills remove resume-bullet-writer
-
-# Or remove all skills from a directory
-rm -rf ~/.agents/skills/resume-*
-rm -rf ~/.cursor/skills/resume-*
+claude plugin remove resume-skills
 ```
 
 ## Supported AI Agents
 
-These skills work with multiple AI coding assistants:
+Built as a **Claude Code plugin**. Skills are also compatible with other AI coding assistants that support the `.claude/skills/` convention:
 
+- **Claude Code** (CLI, Desktop, Web, IDE extensions)
 - **Cursor** (IDE)
-- **Claude Code** (CLI)
 - **Windsurf**
 - **Codex**
 - **Gemini CLI**
-- **Amp, Antigravity, Augment** and 30+ more
 
 ## Usage
 
