@@ -34,6 +34,11 @@ Have an idea for a new skill? We welcome contributions for:
 All skills must follow this structure:
 
 ```markdown
+---
+name: Skill Name
+description: Brief description of what the skill does and when to use it
+---
+
 # Skill Name
 
 ## When to Use This Skill
@@ -51,13 +56,15 @@ All skills must follow this structure:
 
 Include:
 - Overview & Context
-- Frameworks & Methodologies  
+- Frameworks & Methodologies
 - Step-by-step Process
 - Output Requirements/Formats
 - Examples (Before/After)
 - Edge Cases & Special Situations
 - Implementation Checklist
 ```
+
+**Important:** The YAML frontmatter (`---` block) with `name` and `description` fields is required. Skills without frontmatter will not be discovered by Claude Code.
 
 ## Guidelines for Quality
 
