@@ -10,7 +10,7 @@
     {
       "name": "resume-skills",
       "description": "20 specialized skills for resume optimization, job search strategy, interview prep, and career development",
-      "source": ".",
+      "source": "./resume-skills",
       "category": "productivity"
     }
   ]

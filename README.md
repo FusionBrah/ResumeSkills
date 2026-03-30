@@ -10,26 +10,26 @@ Skills are markdown files that give AI agents specialized knowledge and workflow
 
 | Skill | Description |
 |-------|-------------|
-| [resume-ats-optimizer](/skills/resume-ats-optimizer) | Optimize resumes for Applicant Tracking Systems, check ATS compatibility, analyze keyword match |
-| [resume-bullet-writer](/skills/resume-bullet-writer) | Transform weak bullets into achievement-focused statements with metrics and impact |
-| [job-description-analyzer](/skills/job-description-analyzer) | Analyze job postings, calculate match scores, identify gaps, create application strategy |
-| [resume-tailor](/skills/resume-tailor) | Customize resume for specific job postings while maintaining truthfulness |
-| [cover-letter-generator](/skills/cover-letter-generator) | Create personalized, compelling cover letters from resume + job description |
-| [linkedin-profile-optimizer](/skills/linkedin-profile-optimizer) | Sync resume with LinkedIn, optimize for searchability and engagement |
-| [interview-prep-generator](/skills/interview-prep-generator) | Generate STAR stories, practice questions, talking points from resume |
-| [salary-negotiation-prep](/skills/salary-negotiation-prep) | Research market rates, build negotiation strategy, create counter-offer scripts |
-| [tech-resume-optimizer](/skills/tech-resume-optimizer) | Optimize resumes for software engineering, PM, and technical roles |
-| [executive-resume-writer](/skills/executive-resume-writer) | Create C-suite and VP level resumes emphasizing strategic leadership |
-| [career-changer-translator](/skills/career-changer-translator) | Translate skills from one industry to another, identify transferable skills |
-| [resume-quantifier](/skills/resume-quantifier) | Find opportunities to add metrics, estimate when numbers unknown |
-| [resume-formatter](/skills/resume-formatter) | Ensure ATS-friendly formatting, create clean scannable layouts |
-| [portfolio-case-study-writer](/skills/portfolio-case-study-writer) | Transform resume bullets into detailed portfolio case studies |
-| [academic-cv-builder](/skills/academic-cv-builder) | Format CVs for academic positions with publications, grants, teaching |
-| [reference-list-builder](/skills/reference-list-builder) | Format professional references properly and prepare reference materials |
-| [offer-comparison-analyzer](/skills/offer-comparison-analyzer) | Compare multiple job offers side-by-side with total compensation analysis |
-| [resume-version-manager](/skills/resume-version-manager) | Track different resume versions, maintain master resume, manage tailored versions |
-| [creative-portfolio-resume](/skills/creative-portfolio-resume) | Balance visual design with ATS compatibility for creative roles |
-| [resume-section-builder](/skills/resume-section-builder) | Create targeted sections optimized for different experience levels and roles |
+| [resume-ats-optimizer](/resume-skills/skills/resume-ats-optimizer) | Optimize resumes for Applicant Tracking Systems, check ATS compatibility, analyze keyword match |
+| [resume-bullet-writer](/resume-skills/skills/resume-bullet-writer) | Transform weak bullets into achievement-focused statements with metrics and impact |
+| [job-description-analyzer](/resume-skills/skills/job-description-analyzer) | Analyze job postings, calculate match scores, identify gaps, create application strategy |
+| [resume-tailor](/resume-skills/skills/resume-tailor) | Customize resume for specific job postings while maintaining truthfulness |
+| [cover-letter-generator](/resume-skills/skills/cover-letter-generator) | Create personalized, compelling cover letters from resume + job description |
+| [linkedin-profile-optimizer](/resume-skills/skills/linkedin-profile-optimizer) | Sync resume with LinkedIn, optimize for searchability and engagement |
+| [interview-prep-generator](/resume-skills/skills/interview-prep-generator) | Generate STAR stories, practice questions, talking points from resume |
+| [salary-negotiation-prep](/resume-skills/skills/salary-negotiation-prep) | Research market rates, build negotiation strategy, create counter-offer scripts |
+| [tech-resume-optimizer](/resume-skills/skills/tech-resume-optimizer) | Optimize resumes for software engineering, PM, and technical roles |
+| [executive-resume-writer](/resume-skills/skills/executive-resume-writer) | Create C-suite and VP level resumes emphasizing strategic leadership |
+| [career-changer-translator](/resume-skills/skills/career-changer-translator) | Translate skills from one industry to another, identify transferable skills |
+| [resume-quantifier](/resume-skills/skills/resume-quantifier) | Find opportunities to add metrics, estimate when numbers unknown |
+| [resume-formatter](/resume-skills/skills/resume-formatter) | Ensure ATS-friendly formatting, create clean scannable layouts |
+| [portfolio-case-study-writer](/resume-skills/skills/portfolio-case-study-writer) | Transform resume bullets into detailed portfolio case studies |
+| [academic-cv-builder](/resume-skills/skills/academic-cv-builder) | Format CVs for academic positions with publications, grants, teaching |
+| [reference-list-builder](/resume-skills/skills/reference-list-builder) | Format professional references properly and prepare reference materials |
+| [offer-comparison-analyzer](/resume-skills/skills/offer-comparison-analyzer) | Compare multiple job offers side-by-side with total compensation analysis |
+| [resume-version-manager](/resume-skills/skills/resume-version-manager) | Track different resume versions, maintain master resume, manage tailored versions |
+| [creative-portfolio-resume](/resume-skills/skills/creative-portfolio-resume) | Balance visual design with ATS compatibility for creative roles |
+| [resume-section-builder](/resume-skills/skills/resume-section-builder) | Create targeted sections optimized for different experience levels and roles |
 
 ## Installation
 
