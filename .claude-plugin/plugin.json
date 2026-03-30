@@ -2,10 +2,19 @@
   "name": "resume-skills",
   "version": "1.0.0",
   "description": "Resume optimization skills for Claude Code - ATS optimization, bullet writing, job matching, and career development",
-  "author": "Resume Skills Contributors",
+  "author": {
+    "name": "Resume Skills Contributors"
+  },
+  "repository": "https://github.com/FusionBrah/ResumeSkills",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/FusionBrah/ResumeSkills"
-  }
+  "keywords": [
+    "resume",
+    "cv",
+    "ats",
+    "job-search",
+    "career",
+    "interview",
+    "cover-letter",
+    "salary-negotiation"
+  ]
 }

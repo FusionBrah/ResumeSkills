@@ -36,14 +36,14 @@ Skills are markdown files that give AI agents specialized knowledge and workflow
 ### Claude Code Plugin (Recommended)
 
 ```bash
-# Add the plugin marketplace
+# Step 1: Add the marketplace
 /plugin marketplace add FusionBrah/ResumeSkills
 
-# Install the plugin
-/plugin install resume-skills@FusionBrah-ResumeSkills
+# Step 2: Install the plugin
+/plugin install resume-skills@resume-skills
 ```
 
-Skills are automatically available via slash commands (e.g., `/resume-tailor`, `/interview-prep-generator`).
+Once installed, all 20 skills are automatically available in Claude Code.
 
 ### Uninstall
 
