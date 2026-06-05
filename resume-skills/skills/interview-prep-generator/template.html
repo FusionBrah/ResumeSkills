@@ -193,6 +193,24 @@
     color: var(--ink-soft); margin-top: 10px;
   }
 
+  /* ---------- Tough questions ---------- */
+  .tough-card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 20px 24px; margin-bottom: 14px; box-shadow: 3px 3px 0 var(--paper-deep);
+  }
+  .tough-card .tq { font-family: "Fraunces", serif; font-weight: 600; font-size: 19px; margin-bottom: 4px; }
+  .tough-card .formula {
+    font-family: "Spline Sans Mono", monospace; font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--amber); margin-bottom: 12px;
+  }
+  .tough-card .answer {
+    border-left: 3px solid var(--amber); padding: 4px 0 4px 16px;
+    font-family: "Fraunces", serif; font-size: 16.5px; line-height: 1.7;
+  }
+  .tough-card .answer p + p { margin-top: 10px; }
+  .tough-card .note { font-size: 13px; color: var(--ink-soft); margin-top: 10px; }
+  .tough-card .note a { color: var(--forest); }
+
   /* ---------- Ask / research / red flags ---------- */
   .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
   .panel {
@@ -257,8 +275,9 @@
       <a class="chip" href="#questions">02 Questions</a>
       <a class="chip" href="#stories">03 Story Bank</a>
       <a class="chip" href="#pitch">04 Your Pitch</a>
-      <a class="chip" href="#ask">05 Ask Them</a>
-      <a class="chip" href="#research">06 Research</a>
+      <a class="chip" href="#tough">05 Tough Qs</a>
+      <a class="chip" href="#ask">06 Ask Them</a>
+      <a class="chip" href="#research">07 Research</a>
     </div>
     <button id="practiceToggle">▶ Practice Mode</button>
   </nav>
@@ -386,9 +405,58 @@
     <p class="timing">⏱ Target: 90 seconds. Practice out loud, twice.</p>
   </section>
 
-  <!-- ============ 05 QUESTIONS TO ASK ============ -->
+  <!-- ============ 05 TOUGH QUESTIONS ============ -->
+  <section id="tough">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Tough Questions</h2><span class="rule"></span></div>
+
+    <!-- REPEAT: one .tough-card per difficult question. Always include:
+         why leaving, greatest weakness, failure, salary. Add any
+         role-specific landmines surfaced by the JD or research. -->
+    <div class="tough-card">
+      <p class="tq">"Why are you leaving your current job?"</p>
+      <p class="formula">Formula: positive · forward-looking · brief</p>
+      <span class="conceal-hint">⊙ tap to reveal</span>
+      <div class="answer concealable">
+        <p>"I've learned a lot at TechCorp — it's where I grew from feature PM to owning a full product line. What I can't get there is true 0→1 ownership. The mobile turnaround was the closest I came, and it's the work I want to be doing full time. This role at Atlas Labs is exactly that — a new product line where evidence-based prioritization decides whether it ships."</p>
+      </div>
+      <p class="note">Pull, not push: never mention frustrations with leadership, reorgs, or compensation. Stop talking after the last sentence — over-explaining reads as defensiveness.</p>
+    </div>
+
+    <div class="tough-card">
+      <p class="tq">"What's your greatest weakness?"</p>
+      <p class="formula">Formula: real weakness + self-awareness + improvement steps</p>
+      <span class="conceal-hint">⊙ tap to reveal</span>
+      <div class="answer concealable">
+        <p>"I tend to be overly detail-oriented, which can slow me down. I've recognized this and now set time limits for tasks and ask for feedback on when good enough is good enough. In my current role I've also learned to delegate detailed work when appropriate."</p>
+      </div>
+      <p class="note">Must be a real weakness — "I work too hard" reads as evasion.</p>
+    </div>
+
+    <div class="tough-card">
+      <p class="tq">"Tell me about a time you failed."</p>
+      <p class="formula">Formula: real failure + lesson + applied learning</p>
+      <span class="conceal-hint">⊙ tap to reveal</span>
+      <div class="answer concealable">
+        <p>"In my first PM year I launched a feature without sufficient user research. It was technically sound but confusing — only 10% adoption. I learned that building the right thing matters more than building the thing right. I made 10 user interviews a hard gate before major feature decisions, and the re-researched v2 hit 47% adoption."</p>
+      </div>
+      <p class="note">Full version: <a href="#story-3">Feature Launch Miss</a>. Own it cleanly — no blame-shifting, no humble brags.</p>
+    </div>
+
+    <div class="tough-card">
+      <p class="tq">"What are your salary expectations?"</p>
+      <p class="formula">Formula: deflect first · range only if pressed</p>
+      <span class="conceal-hint">⊙ tap to reveal</span>
+      <div class="answer concealable">
+        <p>Deflect: "I'm flexible on compensation and more focused on finding the right role. Can you share the range budgeted for this position?"</p>
+        <p>If pressed: "Based on my research and experience, I'm looking for something in the range of $165-185K base, but I'm open to discussing the full compensation package."</p>
+      </div>
+      <p class="note">Whoever names a number first anchors the negotiation — make it them.</p>
+    </div>
+  </section>
+
+  <!-- ============ 06 QUESTIONS TO ASK ============ -->
   <section id="ask">
-    <div class="sec-head"><span class="sec-num">05</span><h2>Questions to Ask Them</h2><span class="rule"></span></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2>Questions to Ask Them</h2><span class="rule"></span></div>
     <div class="two-col">
       <div class="panel">
         <h3>For the Hiring Manager</h3>
@@ -407,9 +475,9 @@
     </div>
   </section>
 
-  <!-- ============ 06 RESEARCH & RED FLAGS ============ -->
+  <!-- ============ 07 RESEARCH & RED FLAGS ============ -->
   <section id="research">
-    <div class="sec-head"><span class="sec-num">06</span><h2>Research &amp; Landmines</h2><span class="rule"></span></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>Research &amp; Landmines</h2><span class="rule"></span></div>
     <div class="two-col">
       <div class="panel">
         <h3>Company Research Notes</h3>

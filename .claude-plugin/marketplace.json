@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "resume-skills",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Resume optimization skills for Claude Code - ATS optimization, bullet writing, job matching, and career development",
   "owner": {
     "name": "Resume Skills Contributors"
@@ -11,7 +11,7 @@
       "name": "resume-skills",
       "description": "20 specialized skills for resume optimization, job search strategy, interview prep, and career development",
       "source": "./resume-skills",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "productivity"
     }
   ]

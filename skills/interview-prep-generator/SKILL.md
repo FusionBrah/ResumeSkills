@@ -320,8 +320,9 @@ Generate the interview prep package as a **single self-contained HTML file** —
 | 02 | Predicted Questions | Tagged HIGH/MED probability, each linked to the story that answers it |
 | 03 | STAR Story Bank | 8-10 `<details>` story cards: color-coded S/T/A/R rows + 60-second version + one-liner |
 | 04 | "Tell Me About Yourself" | 90-second pitch script tailored to this role |
-| 05 | Questions to Ask | Grouped panels: hiring manager / team / executives |
-| 06 | Research & Landmines | Company research notes panel + red-flags-to-avoid warning panel |
+| 05 | Tough Questions | Scripted, personalized answers for difficult questions — always include: why leaving, greatest weakness, failure, salary. Each card: formula line + rehearsable script + coaching note. Use the "Handling Difficult Questions" guidance above |
+| 06 | Questions to Ask | Grouped panels: hiring manager / team / executives |
+| 07 | Research & Landmines | Company research notes panel + red-flags-to-avoid warning panel |
 
 **Interactive features to preserve (keep the template's JS intact):**
 - **Practice Mode** — toggle blurs all answers so the user can self-quiz; tap reveals one at a time
