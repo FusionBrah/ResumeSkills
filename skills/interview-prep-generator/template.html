@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<!--
+  INTERVIEW PREP DOSSIER — template for the interview-prep-generator skill.
+  All content below is EXAMPLE/MOCK DATA. When generating real prep:
+  reproduce this markup, CSS, and JS exactly; replace only the content.
+  Repeatable blocks are marked with "REPEAT" comments.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Dossier — Senior Product Manager @ Atlas Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@400;500;700&family=Spline+Sans+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f7f2e9;
+    --paper-deep: #efe7d8;
+    --ink: #211d17;
+    --ink-soft: #5c5547;
+    --forest: #205a41;
+    --forest-soft: #dde8e0;
+    --amber: #c47e10;
+    --amber-soft: #f3dfae;
+    --oxblood: #8c2f1b;
+    --oxblood-soft: #f0ddd5;
+    --line: #d8cdb8;
+    --radius: 10px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    background-image: radial-gradient(var(--line) 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    color: var(--ink);
+    font-family: "Archivo", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px 96px; }
+
+  /* ---------- Header ---------- */
+  header { padding: 56px 0 32px; border-bottom: 3px solid var(--ink); }
+  .eyebrow {
+    font-family: "Spline Sans Mono", monospace;
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--forest); display: flex; align-items: center; gap: 12px;
+  }
+  .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  h1 {
+    font-family: "Fraunces", serif; font-weight: 900;
+    font-size: clamp(34px, 6vw, 58px); line-height: 1.05; margin: 18px 0 8px;
+  }
+  h1 .at { color: var(--forest); font-style: italic; font-weight: 600; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 18px;
+    font-family: "Spline Sans Mono", monospace; font-size: 13px; color: var(--ink-soft);
+  }
+  .meta-row b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Practice mode toggle ---------- */
+  .practice-bar {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--paper); border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 0; margin-bottom: 40px;
+  }
+  .chips {
+    display: flex; gap: 6px; flex: 1; min-width: 0;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip {
+    font-family: "Spline Sans Mono", monospace; font-size: 11px;
+    white-space: nowrap; flex-shrink: 0;
+    text-decoration: none; color: var(--ink-soft);
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 4px 10px; background: var(--paper);
+    transition: all .15s ease;
+  }
+  .chip:hover { border-color: var(--forest); color: var(--forest); }
+  #practiceToggle {
+    flex-shrink: 0; white-space: nowrap; cursor: pointer;
+    font-family: "Spline Sans Mono", monospace; font-size: 12px; font-weight: 600;
+    border: 1.5px solid var(--ink); border-radius: 999px;
+    padding: 5px 14px; background: var(--ink); color: var(--paper);
+    transition: all .15s ease;
+  }
+  body.practice #practiceToggle { background: var(--amber); border-color: var(--amber); color: var(--ink); }
+
+  /* ---------- Sections ---------- */
+  section { margin-bottom: 64px; }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; }
+  .sec-num {
+    font-family: "Fraunces", serif; font-weight: 900; font-style: italic;
+    font-size: 15px; color: var(--paper);
+    background: var(--forest); border-radius: 50%;
+    width: 34px; height: 34px; flex-shrink: 0;
+    display: grid; place-items: center;
+  }
+  h2 { font-family: "Fraunces", serif; font-weight: 600; font-size: 28px; }
+  .sec-head .rule { flex: 1; height: 1px; background: var(--line); }
+
+  /* ---------- Competency cards ---------- */
+  .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .comp-card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 18px 20px; box-shadow: 3px 3px 0 var(--paper-deep);
+  }
+  .comp-card h3 { font-family: "Fraunces", serif; font-size: 18px; margin-bottom: 6px; }
+  .comp-card .evidence { font-size: 13.5px; color: var(--ink-soft); }
+  .comp-card .evidence b { color: var(--forest); font-weight: 600; }
+
+  /* ---------- Questions ---------- */
+  .q-row {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 14px 18px; margin-bottom: 10px;
+  }
+  .tag {
+    flex-shrink: 0; font-family: "Spline Sans Mono", monospace;
+    font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em;
+    border-radius: 4px; padding: 3px 8px; margin-top: 3px;
+  }
+  .tag.high { background: var(--amber-soft); color: var(--amber); }
+  .tag.med  { background: var(--paper-deep); color: var(--ink-soft); }
+  .q-row .q { font-weight: 500; }
+  .q-row .use {
+    display: block; font-size: 13px; color: var(--forest); margin-top: 2px;
+  }
+  .q-row .use a { color: inherit; text-decoration-color: var(--line); }
+
+  /* ---------- STAR story cards ---------- */
+  details.story {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    margin-bottom: 14px; overflow: hidden; box-shadow: 3px 3px 0 var(--paper-deep);
+  }
+  details.story summary {
+    cursor: pointer; list-style: none;
+    padding: 16px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  details.story summary::-webkit-details-marker { display: none; }
+  details.story summary::before {
+    content: "+"; font-family: "Fraunces", serif; font-weight: 900;
+    font-size: 20px; color: var(--forest); width: 18px;
+  }
+  details.story[open] summary::before { content: "–"; }
+  .story-title { font-family: "Fraunces", serif; font-weight: 600; font-size: 19px; }
+  .use-tags { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+  .use-tags span {
+    font-family: "Spline Sans Mono", monospace; font-size: 10.5px;
+    background: var(--forest-soft); color: var(--forest);
+    border-radius: 4px; padding: 3px 8px;
+  }
+  .story-body { padding: 4px 20px 20px; border-top: 1px dashed var(--line); }
+  .star-grid { display: grid; gap: 0; margin-top: 14px; }
+  .star-row { display: grid; grid-template-columns: 46px 1fr; gap: 14px; padding: 10px 0; }
+  .star-row + .star-row { border-top: 1px dashed var(--line); }
+  .star-letter {
+    font-family: "Fraunces", serif; font-weight: 900; font-size: 24px;
+    line-height: 1; padding-top: 2px; text-align: center;
+    border-left: 3px solid;
+  }
+  .star-row.s .star-letter { color: var(--forest); border-color: var(--forest); }
+  .star-row.t .star-letter { color: var(--amber); border-color: var(--amber); }
+  .star-row.a .star-letter { color: var(--ink); border-color: var(--ink); }
+  .star-row.r .star-letter { color: var(--oxblood); border-color: var(--oxblood); }
+  .star-row .lbl {
+    display: block; font-family: "Spline Sans Mono", monospace;
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .versions { margin-top: 16px; display: grid; gap: 10px; }
+  .version {
+    background: var(--paper); border-radius: 8px; padding: 12px 16px; font-size: 14.5px;
+  }
+  .version .v-lbl {
+    font-family: "Spline Sans Mono", monospace; font-size: 10.5px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest);
+    display: block; margin-bottom: 4px;
+  }
+
+  /* ---------- Script / pitch ---------- */
+  .script-block {
+    background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--forest);
+    border-radius: var(--radius); padding: 24px 28px;
+    font-family: "Fraunces", serif; font-size: 18px; line-height: 1.75;
+  }
+  .script-block p + p { margin-top: 14px; }
+  .timing {
+    font-family: "Spline Sans Mono", monospace; font-size: 12px;
+    color: var(--ink-soft); margin-top: 10px;
+  }
+
+  /* ---------- Ask / research / red flags ---------- */
+  .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .panel {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px;
+  }
+  .panel h3 {
+    font-family: "Spline Sans Mono", monospace; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--forest); margin-bottom: 10px;
+  }
+  .panel ul { list-style: none; }
+  .panel li { padding: 7px 0 7px 22px; position: relative; font-size: 14.5px; }
+  .panel li + li { border-top: 1px dashed var(--line); }
+  .panel li::before { content: "→"; position: absolute; left: 0; color: var(--forest); }
+  .panel.warn { border-left: 4px solid var(--oxblood); }
+  .panel.warn h3 { color: var(--oxblood); }
+  .panel.warn li::before { content: "✕"; color: var(--oxblood); }
+
+  /* ---------- Practice mode ---------- */
+  .concealable { transition: filter .2s ease; }
+  body.practice .concealable:not(.revealed) {
+    filter: blur(9px); cursor: pointer; user-select: none; position: relative;
+  }
+  body.practice .conceal-hint { display: inline-block; }
+  .conceal-hint {
+    display: none; font-family: "Spline Sans Mono", monospace; font-size: 11px;
+    color: var(--amber); margin-bottom: 6px;
+  }
+
+  footer {
+    border-top: 3px solid var(--ink); padding-top: 18px;
+    font-family: "Spline Sans Mono", monospace; font-size: 12px; color: var(--ink-soft);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+
+  /* ---------- Print ---------- */
+  @media print {
+    body { background: #fff; font-size: 12px; }
+    .practice-bar, .conceal-hint { display: none !important; }
+    .concealable { filter: none !important; }
+    details.story { box-shadow: none; break-inside: avoid; }
+    section { margin-bottom: 32px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <!-- Replace: role, company, interview logistics -->
+    <p class="eyebrow">Interview Dossier · Confidential Prep</p>
+    <h1>Senior Product Manager <span class="at">@ Atlas Labs</span></h1>
+    <div class="meta-row">
+      <span>INTERVIEW <b>Tue, Jun 16 · 10:00 AM PT</b></span>
+      <span>FORMAT <b>Panel — HM + 2 PMs + Eng Lead</b></span>
+      <span>CANDIDATE <b>Jordan Rivera</b></span>
+    </div>
+  </header>
+
+  <nav class="practice-bar">
+    <div class="chips">
+      <a class="chip" href="#analysis">01 Role Analysis</a>
+      <a class="chip" href="#questions">02 Questions</a>
+      <a class="chip" href="#stories">03 Story Bank</a>
+      <a class="chip" href="#pitch">04 Your Pitch</a>
+      <a class="chip" href="#ask">05 Ask Them</a>
+      <a class="chip" href="#research">06 Research</a>
+    </div>
+    <button id="practiceToggle">▶ Practice Mode</button>
+  </nav>
+
+  <!-- ============ 01 ROLE ANALYSIS ============ -->
+  <section id="analysis">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Role Analysis</h2><span class="rule"></span></div>
+    <div class="comp-grid">
+      <!-- REPEAT: one .comp-card per competency they'll test -->
+      <div class="comp-card">
+        <h3>Cross-functional leadership</h3>
+        <p class="evidence"><b>Evidence in JD:</b> "drive alignment across engineering, design, and GTM" — expect 2+ behavioral questions here.</p>
+      </div>
+      <div class="comp-card">
+        <h3>0→1 product execution</h3>
+        <p class="evidence"><b>Evidence in JD:</b> "own a new product line from concept to launch" — they will probe shipping experience.</p>
+      </div>
+      <div class="comp-card">
+        <h3>Data-driven prioritization</h3>
+        <p class="evidence"><b>Evidence in JD:</b> "ruthless prioritization against measurable outcomes" — bring metrics for every story.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 PREDICTED QUESTIONS ============ -->
+  <section id="questions">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Predicted Questions</h2><span class="rule"></span></div>
+    <!-- REPEAT: one .q-row per question; tag.high or tag.med -->
+    <div class="q-row"><span class="tag high">HIGH</span>
+      <div><span class="q">"Tell me about a time you led a team through a difficult project."</span>
+      <span class="use">→ Use story: <a href="#story-1">Mobile Turnaround</a></span></div>
+    </div>
+    <div class="q-row"><span class="tag high">HIGH</span>
+      <div><span class="q">"Walk me through a product you took from 0 to 1."</span>
+      <span class="use">→ Use story: <a href="#story-2">Product Line Launch</a></span></div>
+    </div>
+    <div class="q-row"><span class="tag high">HIGH</span>
+      <div><span class="q">"How do you prioritize when everything feels urgent?"</span>
+      <span class="use">→ Use story: <a href="#story-1">Mobile Turnaround</a> (research-driven cut to 5 features)</span></div>
+    </div>
+    <div class="q-row"><span class="tag med">MED</span>
+      <div><span class="q">"Tell me about a time you failed."</span>
+      <span class="use">→ Use story: <a href="#story-3">Feature Launch Miss</a></span></div>
+    </div>
+    <div class="q-row"><span class="tag med">MED</span>
+      <div><span class="q">"How do you handle disagreement with engineering?"</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 03 STAR STORY BANK ============ -->
+  <section id="stories">
+    <div class="sec-head"><span class="sec-num">03</span><h2>STAR Story Bank</h2><span class="rule"></span></div>
+
+    <!-- REPEAT: one details.story per story (aim for 8-10) -->
+    <details class="story" id="story-1" open>
+      <summary>
+        <span class="story-title">Mobile Turnaround</span>
+        <span class="use-tags"><span>LEADERSHIP</span><span>PRIORITIZATION</span><span>ACHIEVEMENT</span></span>
+      </summary>
+      <div class="story-body">
+        <span class="conceal-hint">⊙ tap to reveal</span>
+        <div class="star-grid concealable">
+          <div class="star-row s"><span class="star-letter">S</span><div><span class="lbl">Situation</span>At TechCorp, our main product was losing customers to a competitor with a better mobile experience — churn hit 5% monthly, up from our normal 2%.</div></div>
+          <div class="star-row t"><span class="star-letter">T</span><div><span class="lbl">Task</span>As PM, I was responsible for turning around our mobile product to stop the bleeding and win back customers.</div></div>
+          <div class="star-row a"><span class="star-letter">A</span><div><span class="lbl">Action</span>Interviewed 30 churned customers; prioritized 5 critical parity features; restructured the roadmap with engineering; negotiated 2 contract developers; ran a 50-customer beta before full launch.</div></div>
+          <div class="star-row r"><span class="star-letter">R</span><div><span class="lbl">Result</span>Launched in 3 months. Churn back to 2% within 60 days, 35% of churned customers recovered, mobile NPS 32 → 58. Recognized at company all-hands.</div></div>
+        </div>
+        <div class="versions concealable">
+          <div class="version"><span class="v-lbl">60-second version</span>When churn spiked to 5% from a competitor's better mobile app, I interviewed 30 churned customers, cut the roadmap to 5 parity features, and shipped in 3 months — churn returned to 2% and mobile NPS rose 26 points.</div>
+          <div class="version"><span class="v-lbl">One-liner</span>I reversed a 2.5× churn spike in 90 days by rebuilding our mobile roadmap around churned-customer interviews.</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="story" id="story-2">
+      <summary>
+        <span class="story-title">Product Line Launch</span>
+        <span class="use-tags"><span>0→1</span><span>CROSS-FUNCTIONAL</span></span>
+      </summary>
+      <div class="story-body">
+        <span class="conceal-hint">⊙ tap to reveal</span>
+        <div class="star-grid concealable">
+          <div class="star-row s"><span class="star-letter">S</span><div><span class="lbl">Situation</span>Leadership committed to launching a new product line within 6 months to counter market-share loss.</div></div>
+          <div class="star-row t"><span class="star-letter">T</span><div><span class="lbl">Task</span>I led the product from concept to launch across engineering, design, marketing, and sales — 12 people.</div></div>
+          <div class="star-row a"><span class="star-letter">A</span><div><span class="lbl">Action</span>Set weekly cross-functional syncs, built the milestone plan, ran 2-week design sprints, resolved 3 eng/marketing conflicts, presented monthly to leadership.</div></div>
+          <div class="star-row r"><span class="star-letter">R</span><div><span class="lbl">Result</span>Launched on time and under budget: $2M first-year revenue, 50 new enterprise customers, company innovation award.</div></div>
+        </div>
+        <div class="versions concealable">
+          <div class="version"><span class="v-lbl">60-second version</span>I took a new product line from concept to launch in 6 months with a 12-person cross-functional team — $2M in year-one revenue and 50 enterprise logos.</div>
+          <div class="version"><span class="v-lbl">One-liner</span>Shipped a $2M product line 0→1 in 6 months with a 12-person cross-functional team.</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="story" id="story-3">
+      <summary>
+        <span class="story-title">Feature Launch Miss</span>
+        <span class="use-tags"><span>FAILURE</span><span>GROWTH</span></span>
+      </summary>
+      <div class="story-body">
+        <span class="conceal-hint">⊙ tap to reveal</span>
+        <div class="star-grid concealable">
+          <div class="star-row s"><span class="star-letter">S</span><div><span class="lbl">Situation</span>In my first PM year, I launched a feature without sufficient user research.</div></div>
+          <div class="star-row t"><span class="star-letter">T</span><div><span class="lbl">Task</span>I owned the feature end to end and had pushed for an aggressive timeline.</div></div>
+          <div class="star-row a"><span class="star-letter">A</span><div><span class="lbl">Action</span>Shipped technically sound but confusing UX; only 10% adoption. Ran a retro, owned the miss publicly, and instituted a minimum of 10 user interviews before any major feature decision.</div></div>
+          <div class="star-row r"><span class="star-letter">R</span><div><span class="lbl">Result</span>The re-researched v2 hit 47% adoption. The interview-first rule became team standard practice.</div></div>
+        </div>
+        <div class="versions concealable">
+          <div class="version"><span class="v-lbl">60-second version</span>I shipped a feature without research — 10% adoption. I owned it, made 10 user interviews a hard gate, and v2 hit 47% adoption. Building the right thing beats building the thing right.</div>
+          <div class="version"><span class="v-lbl">One-liner</span>My worst launch taught me to never skip user research — the rebuilt version got 4.7× the adoption.</div>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ 04 YOUR PITCH ============ -->
+  <section id="pitch">
+    <div class="sec-head"><span class="sec-num">04</span><h2>"Tell Me About Yourself"</h2><span class="rule"></span></div>
+    <span class="conceal-hint">⊙ tap to reveal</span>
+    <div class="script-block concealable">
+      <p>"I'm a product manager with seven years building B2B SaaS, most recently at TechCorp where I led our mobile turnaround — we cut churn from 5% back to 2% in 60 days by rebuilding the roadmap around churned-customer research."</p>
+      <p>"Before that I took a new product line from zero to $2M in first-year revenue with a 12-person cross-functional team. The throughline in my work is using direct customer evidence to make prioritization calls that teams can rally behind."</p>
+      <p>"I'm talking to Atlas Labs because this role is exactly that intersection — owning a 0→1 product line where ruthless, evidence-based prioritization is the difference between shipping and stalling."</p>
+    </div>
+    <p class="timing">⏱ Target: 90 seconds. Practice out loud, twice.</p>
+  </section>
+
+  <!-- ============ 05 QUESTIONS TO ASK ============ -->
+  <section id="ask">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Questions to Ask Them</h2><span class="rule"></span></div>
+    <div class="two-col">
+      <div class="panel">
+        <h3>For the Hiring Manager</h3>
+        <ul>
+          <li>"What does success look like in this role at 30 / 60 / 90 days?"</li>
+          <li>"What's the biggest risk to the new product line right now?"</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>For the Team</h3>
+        <ul>
+          <li>"How do PM and engineering resolve roadmap disagreements here?"</li>
+          <li>"What would you want a new PM to know in week one?"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 RESEARCH & RED FLAGS ============ -->
+  <section id="research">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Research &amp; Landmines</h2><span class="rule"></span></div>
+    <div class="two-col">
+      <div class="panel">
+        <h3>Company Research Notes</h3>
+        <ul>
+          <li><b>Recent news:</b> Series C ($40M) closed in April; scaling from 80 → 150 people.</li>
+          <li><b>Reference point:</b> CEO's blog post on "evidence over opinions" — mirrors your research-first stories.</li>
+          <li><b>Be ready for:</b> why you're leaving a larger company for a scale-up.</li>
+        </ul>
+      </div>
+      <div class="panel warn">
+        <h3>Red Flags to Avoid</h3>
+        <ul>
+          <li>Don't criticize TechCorp's leadership — frame the move as growth-seeking.</li>
+          <li>Don't give salary numbers first — deflect to their budgeted range.</li>
+          <li>Trap watch: "How do you handle a CEO pet feature?" — show respect + evidence, not compliance.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Prepared Jun 5, 2026 · interview-prep-generator</span>
+    <span>Print me — I make a good cram sheet.</span>
+  </footer>
+</div>
+
+<script>
+  // Practice Mode: blur every .concealable; tap to reveal one at a time.
+  const toggle = document.getElementById("practiceToggle");
+  toggle.addEventListener("click", () => {
+    const on = document.body.classList.toggle("practice");
+    toggle.textContent = on ? "■ Exit Practice" : "▶ Practice Mode";
+    document.querySelectorAll(".concealable").forEach(el => el.classList.remove("revealed"));
+  });
+  document.querySelectorAll(".concealable").forEach(el => {
+    el.addEventListener("click", () => {
+      if (document.body.classList.contains("practice")) el.classList.add("revealed");
+    });
+  });
+  // Print: open all story accordions first.
+  window.addEventListener("beforeprint", () => {
+    document.querySelectorAll("details.story").forEach(d => d.open = true);
+  });
+</script>
+</body>
+</html>

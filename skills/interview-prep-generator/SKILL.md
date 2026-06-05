@@ -301,64 +301,34 @@ Each story should have:
 
 ## Output Format
 
-When generating interview prep:
+Generate the interview prep package as a **single self-contained HTML file** — easy to open in any browser, scan on a phone right before the interview, and print as a cram sheet.
 
-```markdown
-# INTERVIEW PREP: [POSITION] AT [COMPANY]
+**File name:** `interview-prep-[company]-[role].html` (e.g., `interview-prep-atlas-labs-senior-pm.html`), written to the user's working directory.
 
-## Role Analysis
-**Key competencies they'll test:**
-1. [Competency] - Evidence: [From JD]
-2. [Competency] - Evidence: [From JD]
-3. [Competency] - Evidence: [From JD]
+**How to build it:**
+1. Read `template.html` in this skill's directory — it is the complete structural reference, filled with example data
+2. Reproduce its markup, CSS, and JavaScript exactly; replace only the content
+3. Blocks marked with `REPEAT` comments repeat once per item (competency cards, question rows, story cards)
+4. After writing the file, tell the user to open it in their browser (e.g., `open interview-prep-*.html`)
 
-## Predicted Questions
+**Required sections (match the template's numbered sections):**
 
-### High Probability (prepare thoroughly)
-1. [Question] → Use story: [Story name]
-2. [Question] → Use story: [Story name]
-3. [Question] → Use story: [Story name]
+| # | Section | Content |
+|---|---------|---------|
+| — | Header | Position @ company, interview date/format, candidate name |
+| 01 | Role Analysis | 3-5 competency cards, each with evidence quoted from the JD |
+| 02 | Predicted Questions | Tagged HIGH/MED probability, each linked to the story that answers it |
+| 03 | STAR Story Bank | 8-10 `<details>` story cards: color-coded S/T/A/R rows + 60-second version + one-liner |
+| 04 | "Tell Me About Yourself" | 90-second pitch script tailored to this role |
+| 05 | Questions to Ask | Grouped panels: hiring manager / team / executives |
+| 06 | Research & Landmines | Company research notes panel + red-flags-to-avoid warning panel |
 
-### Medium Probability
-1. [Question]
-2. [Question]
+**Interactive features to preserve (keep the template's JS intact):**
+- **Practice Mode** — toggle blurs all answers so the user can self-quiz; tap reveals one at a time
+- **Anchor nav chips** — sticky section navigation
+- **Print support** — `beforeprint` opens all story accordions; print stylesheet strips chrome
 
-## Your STAR Story Bank
-
-### Story 1: [Name - e.g., "Product Launch Success"]
-**Use for:** Leadership, Achievement, Cross-functional
-**STAR:**
-- S: [Situation]
-- T: [Task]
-- A: [Action]
-- R: [Result with metrics]
-**Short version:** [60 second version]
-
-### Story 2: [Name]
-[Same structure]
-
-## "Tell Me About Yourself" Script
-[2-minute pitch tailored to this role]
-
-## Questions to Ask
-**For Hiring Manager:**
-1. [Question]
-2. [Question]
-
-**For Team:**
-1. [Question]
-2. [Question]
-
-## Company Research Notes
-- Recent news: [Item]
-- Key facts to reference: [Facts]
-- Potential concerns: [Items to be ready for]
-
-## Red Flag Answers to Avoid
-- Don't mention: [Topics]
-- Don't criticize: [Past employer aspects]
-- Watch out for: [Potential trap questions]
-```
+If the user explicitly asks for markdown or plain text instead, honor that — the HTML file is the default.
 
 ## Implementation Checklist
 
